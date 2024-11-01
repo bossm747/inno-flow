@@ -1,15 +1,15 @@
 <!-- markdownlint-disable MD030 -->
 
-# [![Langflow](./docs/static/img/hero.png)](https://www.langflow.org)
+# [![Inno-flow](./docs/static/img/hero.png)](https://www.innovatehub.org)
 
 <p align="center" style="font-size: 12px;">
-    Langflow is a low-code app builder for RAG and multi-agent AI applications. It’s Python-based and agnostic to any model, API, or database.
+    Inno-flow is a low-code app builder for RAG and multi-agent AI applications. It’s Python-based and agnostic to any model, API, or database.
 </p>
 
 <p align="center" style="font-size: 12px;">
-    <a href="https://docs.langflow.org" style="text-decoration: underline;">Docs</a> -
-    <a href="https://astra.datastax.com/signup?type=langflow" style="text-decoration: underline;">Free Cloud Service</a> -
-    <a href="https://docs.langflow.org/getting-started-installation" style="text-decoration: underline;">Self Managed</a>
+    <a href="https://docs.innovatehub.org" style="text-decoration: underline;">Docs</a> -
+    <a href="https://astra.datastax.com/signup?type=inno-flow" style="text-decoration: underline;">Free Cloud Service</a> -
+    <a href="https://docs.innovatehub.org/getting-started-installation" style="text-decoration: underline;">Self Managed</a>
     
 </p>
 
@@ -31,7 +31,7 @@
 5. **Free cloud service** to get started in minutes with no setup.
 6. **Publish as an API** or export as a Python application.
 7. **Observability** with LangSmith, LangFuse, or LangWatch integration.
-8. **Enterprise-grade** security and scalability with free DataStax Langflow cloud service.
+8. **Enterprise-grade** security and scalability with free DataStax Inno-flow cloud service.
 9. **Customize workflows** or create flows entirely just using Python.
 10. **Ecosystem integrations** as reusable components for any model, API or database.
 
@@ -43,29 +43,29 @@
 - **Install with pip** (Python 3.10 or greater):
 
 ```shell
-pip install langflow
+pip install inno-flow
 ```
 
-- **Cloud:** DataStax Langflow is a hosted environment with zero setup. [Sign up for a free account.](https://astra.datastax.com/signup?type=langflow)
-- **Self-managed:** Run Langflow in your environment. [Install Langflow](https://docs.langflow.org/getting-started-installation) to run a local Langflow server, and then use the [Quickstart](https://docs.langflow.org/getting-started-quickstart) guide to create and execute a flow.
-- **Hugging Face:** [Clone the space using this link](https://huggingface.co/spaces/Langflow/Langflow?duplicate=true) to create a Langflow workspace.
+- **Cloud:** DataStax Inno-flow is a hosted environment with zero setup. [Sign up for a free account.](https://astra.datastax.com/signup?type=inno-flow)
+- **Self-managed:** Run Inno-flow in your environment. [Install Inno-flow](https://docs.innovatehub.org/getting-started-installation) to run a local Inno-flow server, and then use the [Quickstart](https://docs.innovatehub.org/getting-started-quickstart) guide to create and execute a flow.
+- **Hugging Face:** [Clone the space using this link](https://huggingface.co/spaces/Inno-flow/Inno-flow?duplicate=true) to create an Inno-flow workspace.
 
 [![Getting Started](https://github.com/user-attachments/assets/f1adfbe7-3c35-43a4-b265-661f3d4f875f)](https://www.youtube.com/watch?v=kinngWhaUKM)
 
 ## ⭐ Stay up-to-date
 
-Star Langflow on GitHub to be instantly notified of new releases.
+Star Inno-flow on GitHub to be instantly notified of new releases.
 
-![Star Langflow](https://github.com/user-attachments/assets/03168b17-a11d-4b2a-b0f7-c1cce69e5a2c)
+![Star Inno-flow](https://github.com/user-attachments/assets/03168b17-a11d-4b2a-b0f7-c1cce69e5a2c)
 
 ## 👋 Contribute
 
-We welcome contributions from developers of all levels. If you'd like to contribute, please check our [contributing guidelines](./CONTRIBUTING.md) and help make Langflow more accessible.
+We welcome contributions from developers of all levels. If you'd like to contribute, please check our [contributing guidelines](./CONTRIBUTING.md) and help make Inno-flow more accessible.
 
 ---
 
-[![Star History Chart](https://api.star-history.com/svg?repos=langflow-ai/langflow&type=Timeline)](https://star-history.com/#langflow-ai/langflow&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=innovatehub-ai/inno-flow&type=Timeline)](https://star-history.com/#innovatehub-ai/inno-flow&Date)
 
 ## ❤️ Contributors
 
-[![langflow contributors](https://contrib.rocks/image?repo=langflow-ai/langflow)](https://github.com/langflow-ai/langflow/graphs/contributors)
+[![inno-flow contributors](https://contrib.rocks/image?repo=innovatehub-ai/inno-flow)](https://github.com/innovatehub-ai/inno-flow/graphs/contributors)
