@@ -1,4 +1,5 @@
-FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+# Stage 1: Build stage
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim AS builder
 ENV TZ=UTC
 
 WORKDIR /app
@@ -21,6 +22,14 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=src/backend/base/uv.lock,target=src/backend/base/uv.lock \
     --mount=type=bind,source=src/backend/base/pyproject.toml,target=src/backend/base/pyproject.toml \
     uv sync --frozen --no-install-project --no-dev
+
+# Stage 2: Final stage
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+ENV TZ=UTC
+
+WORKDIR /app
+
+COPY --from=builder /app /app
 
 EXPOSE 7860
 EXPOSE 3000
