@@ -1,16 +1,28 @@
 <!-- markdownlint-disable MD030 -->
 
-# [![Inno-flow](./docs/static/img/hero.png)](https://www.innovatehub.org)
+# [![Langflow](./docs/static/img/hero.png)](https://www.langflow.org)
 
+<p align="center"><strong>
+    A visual framework for building multi-agent and RAG applications
+</strong></p>
 <p align="center" style="font-size: 12px;">
-    Inno-flow is a low-code app builder for RAG and multi-agent AI applications. It’s Python-based and agnostic to any model, API, or database.
+    Open-source, Python-powered, fully customizable, LLM and vector store agnostic
 </p>
 
 <p align="center" style="font-size: 12px;">
-    <a href="https://docs.innovatehub.org" style="text-decoration: underline;">Docs</a> -
-    <a href="https://astra.datastax.com/signup?type=inno-flow" style="text-decoration: underline;">Free Cloud Service</a> -
-    <a href="https://docs.innovatehub.org/getting-started-installation" style="text-decoration: underline;">Self Managed</a>
-    
+    <a href="https://docs.langflow.org" style="text-decoration: underline;">Docs</a> -
+    <a href="https://discord.com/invite/EqksyE2EX9" style="text-decoration: underline;">Join our Discord</a> -
+    <a href="https://twitter.com/langflow_ai" style="text-decoration: underline;">Follow us on X</a> -
+    <a href="https://huggingface.co/spaces/Langflow/Langflow" style="text-decoration: underline;">Live Demo</a>
+</p>
+
+<p align="center">
+    <a href="https://github.com/langflow-ai/langflow">
+        <img src="https://img.shields.io/github/stars/langflow-ai/langflow">
+    </a>
+    <a href="https://discord.com/invite/EqksyE2EX9">
+        <img src="https://img.shields.io/discord/1116803230643527710?label=Discord">
+    </a>
 </p>
 
 <div align="center">
@@ -22,50 +34,142 @@
   <a href="./README.KR.md"><img alt="README in KOREAN" src="https://img.shields.io/badge/한국어-d9d9d9"></a>
 </div>
 
-## ✨ Core features
+<p align="center">
+  <img src="./docs/static/img/langflow_basic_howto.gif" alt="Your GIF" style="border: 3px solid #211C43;">
+</p>
 
-1. **Python-based** and agnostic to models, APIs, data sources, or databases.
-2. **Visual IDE** for drag-and-drop building and testing of workflows.
-3. **Playground** to immediately test and iterate workflows with step-by-step control.
-4. **Multi-agent** orchestration and conversation management and retrieval.
-5. **Free cloud service** to get started in minutes with no setup.
-6. **Publish as an API** or export as a Python application.
-7. **Observability** with LangSmith, LangFuse, or LangWatch integration.
-8. **Enterprise-grade** security and scalability with free DataStax Inno-flow cloud service.
-9. **Customize workflows** or create flows entirely just using Python.
-10. **Ecosystem integrations** as reusable components for any model, API or database.
+# 📝 Table of Contents
 
-![Integrations](https://github.com/user-attachments/assets/e9c96dc4-47bf-48ab-ad58-e01e038f25e8)
+- [📝 Table of Contents](#-table-of-contents)
+- [📦 Introduction](#-introduction)
+- [🎨 Create Flows](#-create-flows)
+- [Deploy](#deploy)
+  - [Deploy using Google Cloud Platform](#deploy-using-google-cloud-platform)
+  - [Deploy on Railway](#deploy-on-railway)
+  - [Deploy on Render](#deploy-on-render)
+- [🖥️ Command Line Interface (CLI)](#️-command-line-interface-cli)
+  - [Usage](#usage)
+    - [Environment Variables](#environment-variables)
+- [👋 Contribute](#-contribute)
+- [🌟 Contributors](#-contributors)
+- [📄 License](#-license)
 
+# 📦 Introduction
 
-## 📦 Quickstart
-
-- **Install with pip** (Python 3.10 or greater):
+You can install Langflow with pip:
 
 ```shell
-pip install inno-flow
+# Ensure you have >=Python 3.10 installed on your system.
+# Install the pre-release version (recommended for the latest updates)
+python -m pip install langflow --pre --force-reinstall
+
+# or stable version
+python -m pip install langflow -U
 ```
 
-- **Cloud:** DataStax Inno-flow is a hosted environment with zero setup. [Sign up for a free account.](https://astra.datastax.com/signup?type=inno-flow)
-- **Self-managed:** Run Inno-flow in your environment. [Install Inno-flow](https://docs.innovatehub.org/getting-started-installation) to run a local Inno-flow server, and then use the [Quickstart](https://docs.innovatehub.org/getting-started-quickstart) guide to create and execute a flow.
-- **Hugging Face:** [Clone the space using this link](https://huggingface.co/spaces/Inno-flow/Inno-flow?duplicate=true) to create an Inno-flow workspace.
+Then, run Langflow with:
 
-[![Getting Started](https://github.com/user-attachments/assets/f1adfbe7-3c35-43a4-b265-661f3d4f875f)](https://www.youtube.com/watch?v=kinngWhaUKM)
+```shell
+python -m langflow run
+```
 
-## ⭐ Stay up-to-date
+You can also view Langflow on [HuggingFace Spaces](https://huggingface.co/spaces/Langflow/Langflow). [Clone the space using this link](https://huggingface.co/spaces/Langflow/Langflow?duplicate=true) to create your own Langflow workspace in minutes.
 
-Star Inno-flow on GitHub to be instantly notified of new releases.
+# 🎨 Create Flows
 
-![Star Inno-flow](https://github.com/user-attachments/assets/03168b17-a11d-4b2a-b0f7-c1cce69e5a2c)
+Creating flows with Langflow is easy. Simply drag components from the sidebar to the workspace and connect them to start building your application.
 
-## 👋 Contribute
+Explore by editing prompt parameters, grouping components, and building your own custom components.
 
-We welcome contributions from developers of all levels. If you'd like to contribute, please check our [contributing guidelines](./CONTRIBUTING.md) and help make Inno-flow more accessible.
+When finished, you can export your flow as a JSON file.
+
+Load the flow with:
+
+```python
+from langflow.load import run_flow_from_json
+
+results = run_flow_from_json("path/to/flow.json", input_value="Hello, World!")
+```
+
+# Deploy
+
+## Deploy using Google Cloud Platform
+
+Follow our step-by-step guide to deploy Langflow on Google Cloud Platform (GCP) using Google Cloud Shell. The guide is available in the [**Langflow on Google Cloud Platform**](https://github.com/langflow-ai/langflow/blob/dev/docs/docs/deployment/gcp-deployment.md) document.
+
+Alternatively, click the **"Open in Cloud Shell"** button below to launch Google Cloud Shell, clone the Langflow repository, and start an **interactive tutorial** that will guide you through the process of setting up the necessary resources and deploying Langflow in your GCP project.
+
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/langflow-ai/langflow&working_dir=scripts/gcp&shellonly=true&tutorial=walkthroughtutorial_spot.md)
+
+## Deploy on Railway
+
+Use this template to deploy Langflow 1.0 Preview on Railway:
+
+[![Deploy 1.0 Preview on Railway](https://railway.app/button.svg)](https://railway.app/template/UsJ1uB?referralCode=MnPSdg)
+
+Or this one to deploy Langflow 0.6.x:
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/JMXEWp?referralCode=MnPSdg)
+
+## Deploy on Render
+
+<a href="https://render.com/deploy?repo=https://github.com/langflow-ai/langflow/tree/dev">
+<img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" />
+</a>
+
+# 🖥️ Command Line Interface (CLI)
+
+Langflow provides a command line interface (CLI) for easy management and configuration.
+
+## Usage
+
+You can run Langflow using the following command:
+
+```shell
+langflow run [OPTIONS]
+```
+
+Each option is detailed below:
+
+- `--help`: Displays all available options.
+- `--host`: Defines the host to bind the server to. Can be set using the `LANGFLOW_HOST` environment variable. Default is `127.0.0.1`.
+- `--workers`: Sets the number of worker processes. Can be set using the `LANGFLOW_WORKERS` environment variable. Default is `1`.
+- `--timeout`: Sets the worker timeout in seconds. Default is `60`.
+- `--port`: Sets the port to listen on. Can be set using the `LANGFLOW_PORT` environment variable. Default is `7860`.
+- `--env-file`: Specifies the path to the .env file containing environment variables. Default is `.env`.
+- `--log-level`: Defines the logging level. Can be set using the `LANGFLOW_LOG_LEVEL` environment variable. Default is `critical`.
+- `--components-path`: Specifies the path to the directory containing custom components. Can be set using the `LANGFLOW_COMPONENTS_PATH` environment variable. Default is `langflow/components`.
+- `--log-file`: Specifies the path to the log file. Can be set using the `LANGFLOW_LOG_FILE` environment variable. Default is `logs/langflow.log`.
+- `--cache`: Selects the type of cache to use. Options are `InMemoryCache` and `SQLiteCache`. Can be set using the `LANGFLOW_LANGCHAIN_CACHE` environment variable. Default is `SQLiteCache`.
+- `--dev/--no-dev`: Toggles development mode. Default is `no-dev`.
+- `--path`: Specifies the path to the frontend directory containing the build files. This option is for development purposes only. Can be set using the `LANGFLOW_FRONTEND_PATH` environment variable.
+- `--open-browser/--no-open-browser`: Toggles the option to open the browser after starting the server. Can be set using the `LANGFLOW_OPEN_BROWSER` environment variable. Default is `open-browser`.
+- `--remove-api-keys/--no-remove-api-keys`: Toggles the option to remove API keys from projects saved in the database. Can be set using the `LANGFLOW_REMOVE_API_KEYS` environment variable. Default is `no-remove-api-keys`.
+- `--install-completion [bash|zsh|fish|powershell|pwsh]`: Installs completion for the specified shell.
+- `--show-completion [bash|zsh|fish|powershell|pwsh]`: Displays completion for the specified shell, allowing you to copy or customize the installation.
+- `--backend-only`: This parameter, with a default value of `False`, allows running only the backend server without the frontend. Can also be set using the `LANGFLOW_BACKEND_ONLY` environment variable.
+- `--store`: This parameter, with a default value of `True`, enables store features, use `--no-store` to disable them. Can be set using the `LANGFLOW_STORE` environment variable.
+
+These parameters are important for users who need to customize the behavior of Langflow, especially in development or specialized deployment scenarios.
+
+### Environment Variables
+
+You can configure many of the CLI options using environment variables. These can be exported in your operating system or added to a `.env` file and loaded using the `--env-file` option.
+
+An example `.env` file named `.env.example` is included in the project. Copy this file to a new file named `.env` and replace the example values with your actual settings. If you are setting values in both your operating system and the `.env` file, the `.env` settings will take precedence.
+
+# 👋 Contribute
+
+We welcome contributions from developers of all levels to our open-source project on GitHub. If you would like to contribute, please check our [contributing guidelines](./CONTRIBUTING.md) and help make Langflow more accessible.
 
 ---
 
-[![Star History Chart](https://api.star-history.com/svg?repos=innovatehub-ai/inno-flow&type=Timeline)](https://star-history.com/#innovatehub-ai/inno-flow&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=langflow-ai/langflow&type=Timeline)](https://star-history.com/#langflow-ai/langflow&Date)
 
-## ❤️ Contributors
+# 🌟 Contributors
 
-[![inno-flow contributors](https://contrib.rocks/image?repo=innovatehub-ai/inno-flow)](https://github.com/innovatehub-ai/inno-flow/graphs/contributors)
+[![langflow contributors](https://contrib.rocks/image?repo=langflow-ai/langflow)](https://github.com/langflow-ai/langflow/graphs/contributors)
+
+# 📄 License
+
+Langflow is released under the MIT License. See the [LICENSE](LICENSE) file for details.
